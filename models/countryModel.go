@@ -8,4 +8,12 @@ type CountryInfo struct {
 	Borders    []string          `json:"borders"`
 	Flag       string            `json:"flag"`
 	Capital    string            `json:"capital"`
+	Cities     []string          `json:"Cities"`
+}
+
+type CityResponse struct {
+	Data []string `json:"data"`
+}
+type CityRequest struct {
+	Name string `json:"country"`
 }

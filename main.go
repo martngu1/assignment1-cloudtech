@@ -23,7 +23,7 @@ func main() {
 
 	log.Println("Running on port", port)
 
-	err := http.ListenAndServe(":"+port, nil)
+	err := http.ListenAndServe(":"+port, router)
 	if err != nil {
 		log.Fatal(err.Error())
 	}

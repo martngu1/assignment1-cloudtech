@@ -37,6 +37,7 @@ func RequestInfo(url string) models.CountryInfo {
 
 	// Map the first element of the API response to models.CountryInfo
 	resp := apiResp[0]
+
 	var capital string
 	if len(resp.Capital) > 0 {
 		capital = resp.Capital[0]
@@ -50,6 +51,7 @@ func RequestInfo(url string) models.CountryInfo {
 		Borders:    resp.Borders,
 		Flag:       resp.Flags.Png,
 		Capital:    capital,
-		Cities:     []string{}, // will be filled later
+		Cities:     []string{},
 	}
+
 }

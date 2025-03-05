@@ -1,6 +1,7 @@
 package main
 
 import (
+	"assignment1/constants"
 	"assignment1/handlers"
 	"log"
 	"net/http"
@@ -17,8 +18,8 @@ func main() {
 
 	router := http.NewServeMux()
 
-	router.HandleFunc("/countryinfo/v1/info/", handlers.InfoHandler)
-	router.HandleFunc("/countryinfo/v1/population/", handlers.PopulationHandler)
+	router.HandleFunc(constants.InfoPath, handlers.InfoHandler)
+	router.HandleFunc(constants.PopulationPath, handlers.PopulationHandler)
 	router.HandleFunc("/countryinfo/v1/status/", handlers.StatusHandler)
 
 	log.Println("Running on port", port)

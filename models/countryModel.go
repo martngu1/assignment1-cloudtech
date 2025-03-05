@@ -14,6 +14,6 @@ type CountryInfo struct {
 type CityResponse struct {
 	Data []string `json:"data"`
 }
-type CityRequest struct {
+type CountryRequest struct {
 	Name string `json:"country"`
 }

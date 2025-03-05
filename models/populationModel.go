@@ -7,5 +7,10 @@ type Population struct {
 
 type PopulationData struct {
 	Year  int `json:"year"`
-	Count int `json:"value"`
+	Value int `json:"value"`
+}
+type PopulationResponse struct {
+	Data struct {
+		PopulationCounts []PopulationData `json:"populationCounts"`
+	} `json:"data"`
 }

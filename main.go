@@ -21,6 +21,7 @@ func main() {
 	router := http.NewServeMux()
 	services.StartTime = time.Now()
 
+	router.HandleFunc(constants.RootPath, handlers.StartHandler)
 	router.HandleFunc(constants.InfoPath, handlers.InfoHandler)
 	router.HandleFunc(constants.PopulationPath, handlers.PopulationHandler)
 	router.HandleFunc(constants.StatusPath, handlers.StatusHandler)

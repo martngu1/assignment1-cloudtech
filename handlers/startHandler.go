@@ -7,8 +7,6 @@ import (
 )
 
 func StartHandler(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(http.StatusOK)
 
 	response := fmt.Sprintf("This API does not provide a service at the root endpoint %s.\n"+
 		"Please add one of the following paths: \n%s\n%s\n%s",

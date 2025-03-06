@@ -14,7 +14,7 @@ const (
 	DefaultPath    = "/countryinfo/" + Version
 	InfoPath       = DefaultPath + "/info/" + Iso2
 	PopulationPath = DefaultPath + "/population/" + Iso2
-	StatusPath     = DefaultPath + "/Status/"
+	StatusPath     = DefaultPath + "/status/"
 )
 
 const (

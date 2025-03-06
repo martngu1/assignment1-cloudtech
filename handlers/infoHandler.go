@@ -42,17 +42,17 @@ func InfoHandler(w http.ResponseWriter, r *http.Request) {
 		limit := 10 // Default limit (0 for all cities)
 
 		if limitStr != "" {
-			var err error
-			limit, err = strconv.Atoi(limitStr)
-			if err != nil || limit < 0 {
+			var err1 error
+			limit, err1 = strconv.Atoi(limitStr)
+			if err1 != nil || limit < 0 {
 				log.Printf("Invalid limit parameter: %s", limitStr)
 				http.Error(w, "Invalid limit parameter, must be a positive integer", http.StatusBadRequest)
 				return
 			}
 		}
 
-		countryInfo, err := services.GetCountryInfo(ISO2, limit)
-		if err != nil {
+		countryInfo, err2 := services.GetCountryInfo(ISO2, limit)
+		if err2 != nil {
 			log.Printf("errornotfound")
 			http.Error(w, "errornotfound", http.StatusNotFound)
 			return
@@ -60,8 +60,8 @@ func InfoHandler(w http.ResponseWriter, r *http.Request) {
 
 		w.Header().Set("Content-Type", "application/json")
 		w.WriteHeader(http.StatusOK)
-		err2 := json.NewEncoder(w).Encode(countryInfo)
-		if err2 != nil {
+		err3 := json.NewEncoder(w).Encode(countryInfo)
+		if err3 != nil {
 			log.Printf("bad")
 			http.Error(w, "error", http.StatusBadRequest)
 		}

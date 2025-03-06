@@ -3,9 +3,11 @@ package main
 import (
 	"assignment1/constants"
 	"assignment1/handlers"
+	"assignment1/services"
 	"log"
 	"net/http"
 	"os"
+	"time"
 )
 
 func main() {
@@ -17,10 +19,11 @@ func main() {
 	}
 
 	router := http.NewServeMux()
+	services.StartTime = time.Now()
 
 	router.HandleFunc(constants.InfoPath, handlers.InfoHandler)
 	router.HandleFunc(constants.PopulationPath, handlers.PopulationHandler)
-	router.HandleFunc("/countryinfo/v1/status/", handlers.StatusHandler)
+	router.HandleFunc(constants.StatusPath, handlers.StatusHandler)
 
 	log.Println("Running on port", port)
 

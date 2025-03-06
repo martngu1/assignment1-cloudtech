@@ -10,6 +10,7 @@ const (
 )
 
 const (
+	RootPath       = "/"
 	Version        = "v1"
 	DefaultPath    = "/countryinfo/" + Version
 	InfoPath       = DefaultPath + "/info/" + Iso2
